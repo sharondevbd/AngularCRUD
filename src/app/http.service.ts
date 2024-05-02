@@ -18,4 +18,21 @@ export class HttpService {
   create(data: any): Observable<any> {
     return this.http.post(this.apiUrl+"api/Employees",data);
   }
+
+  getbyId(id:number){
+
+    return this.http.get<IEmployee>(this.apiUrl+"api/Employees/"+id)
+   }
+
+  // getbyId(id: string): void {
+  //   this.http.get(id)
+  //     .subscribe({
+  //       next: (data) => {
+  //         this.employee = data;
+  //         console.log(data);
+  //       },
+  //       error: (e) => console.error(e)
+  //     });
+  // }
+  
 }

@@ -25,8 +25,20 @@ export class EmployeeFormComponent implements OnInit {
 
   ngOnInit(){
  var id=this.route.snapshot.params["id"]
+
     console.log(id)
-    // this.srv.get
+    this.srv.getbyId(id).subscribe({
+      next: (data)=> {
+
+      //   this.employeeForm = this.formBuilder.group({
+      //     name:[data.name != null ? data.name [Validators.required]],
+      //     email:['',[Validators.required]],
+      //     phone:['',[Validators.required]],
+      //     age:[0,[Validators.required]],
+      //     salary:[0,[Validators.required]]
+      // }
+      }
+    })
   }
   formbuilder = Inject(FormBuilder);
   employeeForm = this.formBuilder.group({
