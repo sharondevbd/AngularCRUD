@@ -7,6 +7,6 @@ export const routes: Routes = [
     {path:"", component:EmployeeListComponent},
     {path:"Create", component:EmployeeFormComponent},
     {path:"Edit/:id", component:EmployeeFormComponent},
-
+    
 
 ];

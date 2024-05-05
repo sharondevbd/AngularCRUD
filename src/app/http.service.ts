@@ -24,6 +24,13 @@ export class HttpService {
     return this.http.get<IEmployee>(this.apiUrl+"api/Employees/"+id)
    }
 
+   update(id: number, data: any): Observable<any> {
+    return this.http.put(this.apiUrl+"api/Employees/"+id, data);
+  }
+  delete(id: number): Observable<any> {
+    return this.http.delete(this.apiUrl+"api/Employees/"+id);
+  }
+
   // getbyId(id: string): void {
   //   this.http.get(id)
   //     .subscribe({

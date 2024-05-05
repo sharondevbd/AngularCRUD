@@ -2,7 +2,7 @@ import { Component, OnInit, inject } from '@angular/core';
 import { IEmployee } from '../../Interfaces/IEmployee';
 import { HttpService } from '../../http.service';
 import {MatTableModule} from '@angular/material/table';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import {MatButtonModule} from '@angular/material/button';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -17,6 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
 
 
 export class EmployeeListComponent implements OnInit {
+router=inject(Router)
+  
   addData(){
 
   }
@@ -38,4 +40,12 @@ export class EmployeeListComponent implements OnInit {
   displayedColumns: string[] = ['id', 'name', 'email', 'phone', 'age', 'salary', 'Action'];
   // dataSource = this.EmployeeList;
   
+  Delete(empId:number){
+    this.httpservice.delete(empId).subscribe({
+      next:(data)=>{
+        console.log("Deleted"+data.id)
+        this.router.navigateByUrl("")
+       }
+    })
+  }
 }
