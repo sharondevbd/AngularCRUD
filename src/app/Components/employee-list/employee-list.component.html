@@ -45,11 +45,18 @@
               <ng-container matColumnDef="Action">
                 <th mat-header-cell *matHeaderCellDef>Action</th>
                 <td>
-                <button mat-cell *matCellDef="let element" routerLink="Edit/{{element.id}}" mat-button color="primary" class="Edit Button"> Edit </button>
-                <button mat-cell *matCellDef="let element" mat-button color="primary" (click)="Delete(element.id)" class="Delete Button"> Delete </button>
+                <button   *matCellDef="let element" routerLink="Edit/{{element.id}}" mat-button color="primary" class="Edit Button"> Edit </button>
+                
+                <!-- ||<button  *matCellDef="let element" mat-button color="primary" (click)="Delete(element.id)" class="Delete Button"> Delete </button> -->
                   </td>
               </ng-container>
-              
+              <ng-container matColumnDef="Delete">
+                <th mat-header-cell *matHeaderCellDef>...</th>
+                <td>
+                
+                ||<button mat-cell *matCellDef="let element" mat-button color="primary" (click)="Delete(element.id)" class="Delete Button"> Delete </button>
+                  </td>
+              </ng-container>
           
               
         

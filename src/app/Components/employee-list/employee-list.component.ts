@@ -37,10 +37,10 @@ router=inject(Router)
   
   EmployeeList:IEmployee[]=[];
   httpservice = inject(HttpService);
-  displayedColumns: string[] = ['id', 'name', 'email', 'phone', 'age', 'salary', 'Action'];
+  displayedColumns: string[] = ['id', 'name', 'email', 'phone', 'age', 'salary', 'Action','Delete'];
   // dataSource = this.EmployeeList;
-  
   Delete(empId:number){
+ 
     this.httpservice.delete(empId).subscribe({
       next:(data)=>{
         console.log("Deleted"+data.id)
