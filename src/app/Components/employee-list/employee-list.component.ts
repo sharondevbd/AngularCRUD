@@ -40,12 +40,11 @@ router=inject(Router)
   displayedColumns: string[] = ['id', 'name', 'email', 'phone', 'age', 'salary', 'Action','Delete'];
   // dataSource = this.EmployeeList;
   Delete(empId:number){
- 
-    this.httpservice.delete(empId).subscribe({
-      next:(data)=>{
-        console.log("Deleted"+data.id)
-        this.router.navigateByUrl("")
-       }
+    this.httpservice.delete(empId).subscribe(()=>{
+      console.log("Deleted")
+      this.router.navigateByUrl("")
+      this.EmployeeList = this.EmployeeList.filter(x=>x.id!=empId)
     })
   }
+  
 }
